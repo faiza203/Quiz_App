@@ -3,11 +3,11 @@ import {QuestionCard} from "./components/QuestionCard"
 import './App.css';
 
 function App() {
-  const startTrivia = ( e : React.MouseEvent<HTMLButtonElement>) => {
-}
-const nextQuestion = () => {
+  const startTrivia = (e: React.MouseEvent<HTMLButtonElement>) => {
+  }
+  const nextQuestion = () => {
 
-}
+  }
   return (
     <div className="App">
       <h1>I am react</h1>
