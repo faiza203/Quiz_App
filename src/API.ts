@@ -1,6 +1,6 @@
 import { shuffleArray } from "./utils"
 import {Question} from "./components/QuestionType"
-import {Difficulty , QuestionState} from "./components/DifficultyType"
+import {Difficulty } from "./components/DifficultyType"
 
 export const fetchQuizQuestions = async (amount: number, difficulty: Difficulty) => {
     const endPoint = `https://opentdb.com/api.php?amount=${amount}&difficutlty=${difficulty}$type=multiple`;
