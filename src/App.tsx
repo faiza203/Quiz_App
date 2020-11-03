@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { QuestionCard } from './components/QuestionCard';
-import {fetchQuizQuestions ,QuestionState  , Difficulty} from './API'
+import {fetchQuizQuestions } from './API';
+import {Difficulty , QuestionState} from "./components/DifficultyType"
 import './App.css';
 import { async } from 'q';
 
