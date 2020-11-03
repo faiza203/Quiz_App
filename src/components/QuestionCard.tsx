@@ -1,14 +1,7 @@
 import { DH_CHECK_P_NOT_PRIME, DH_UNABLE_TO_CHECK_GENERATOR } from "constants";
 import { type } from "os";
 import React from "react";
-type Props = {
-    question: string;
-    answers: string[];
-    callback: any;
-    userAnswer: any;
-    questionNr: number;
-    totalQuestions: number;
-};
+import {Props} from "./PropsType"
 export const QuestionCard: React.FC<Props> = ({ question, answers, callback, userAnswer, questionNr, totalQuestions
 }) => {
     return (
