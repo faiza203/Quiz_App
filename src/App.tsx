@@ -1,9 +1,18 @@
-import React from 'react';
-import {QuestionCard} from "./components/QuestionCard"
+import React, { useState } from 'react';
+import { QuestionCard } from "./components/QuestionCard"
 import './App.css';
+import { async } from 'q';
 
 function App() {
-  const startTrivia = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const [loading , setLoading] = useState(false);
+  const [question , setQuestion] = useState([]);
+  const [number , setNumber] = useState(0);
+  const [userAnswers , setUserAnswers] = useState([]);
+  const [score , setScore] = useState(0);
+  const [gameOver , setGameOver] = useState(true);
+  
+  const startTrivia = async () => { };
+  const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
   }
   const nextQuestion = () => {
 
