@@ -4,8 +4,9 @@ import './App.css';
 import { async } from 'q';
 
 function App() {
+  const total_Questions = 10;
   const [loading , setLoading] = useState(false);
-  const [question , setQuestion] = useState([]);
+  const [questions , setQuestion] = useState([]);
   const [number , setNumber] = useState(0);
   const [userAnswers , setUserAnswers] = useState([]);
   const [score , setScore] = useState(0);
@@ -25,7 +26,13 @@ function App() {
       </button>
       <p className="score">Score</p>
       <p>Loading Questions...</p>
-      <QuestionCard />
+      <QuestionCard 
+      questionNr={number + 1} totalQuestions={total_Questions}
+      question={questions[number].question}
+      answers={questions[number].answer}
+      userAnswer={userAnswers ? userAnswers[number] : undefined}
+      callback={checkAnwer}
+      />
       <button className="next" onClick={nextQuestion}>
         Next
       </button>
