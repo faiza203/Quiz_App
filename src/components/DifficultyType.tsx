@@ -1,4 +1,4 @@
-import {Question} from "./QuestionType"
+import {Question} from "./index"
 export enum Difficulty {
     EASY = "easy",
     MEDIUM = "medium",
