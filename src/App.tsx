@@ -20,7 +20,11 @@ function App() {
       total_Questions,
       Difficulty.EASY
     );
-    setQuestion(newQuestions)
+    setQuestion(newQuestions);
+    setScore(0);
+    setUserAnswers([]);
+    setNumber(0);
+    setLoading(false);
    };
   const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
   }
