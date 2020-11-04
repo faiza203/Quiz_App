@@ -16,6 +16,11 @@ function App() {
    const startTrivia = async () => {
     setLoading(true);
     setGameOver(false);
+    const newQuestions = await fetchQuizQuestions(
+      total_Questions,
+      Difficulty.EASY
+    );
+    setQuestion(newQuestions)
    };
   const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
   }
