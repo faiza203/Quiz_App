@@ -1,10 +1,22 @@
-import React from 'react';
-import {Quiz} from "./Quiz"
+import React, {useState} from 'react';
+import {QuestionState , Difficulty} from "./components/DifficultyType";
+import {fetchQuizQuestions} from "./API";
+import {AnswerObject} from "./components/AnswerType";
 import './App.css';
 
 function App() {
-  Quiz();
-  const startTrivia = async () => { };
+  const total_Questions = 10;
+  const [loading , setLoading] = useState(false);
+  const [questions , setQuestion] = useState<QuestionState[]>([]);
+  const [number , setNumber] = useState(0);
+  const [userAnswers , setUserAnswers] = useState<AnswerObject[]>([]);
+  const [score , setScore] = useState(0);
+  const [gameOver , setGameOver] = useState(true);
+  console.log(fetchQuizQuestions(total_Questions , Difficulty.EASY)); 
+   const startTrivia = async () => {
+    setLoading(true);
+    setGameOver(false);
+   };
   const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
   }
   const nextQuestion = () => {
