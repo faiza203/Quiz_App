@@ -27,9 +27,7 @@ function App() {
   };
   const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
   }
-  const nextQuestion = () => {
-
-  }
+  const nextQuestion = () => {}
   return (
     <div className="App">
       <h1>I am react</h1>
