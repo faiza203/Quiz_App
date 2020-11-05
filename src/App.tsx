@@ -30,15 +30,22 @@ function App() {
       const correct = questions[number].correct_answer === answer;
       if (correct) setScore(prev => prev + 1);
       const answerObj = {
-        question : questions[number].question,
+        question: questions[number].question,
         answer,
         correct,
-        correct_answer : questions[number].correct_answer,
+        correct_answer: questions[number].correct_answer,
       }
       setUserAnswers(prev => [...prev, answerObj])
     }
   }
-  const nextQuestion = () => { };
+  const next_Question = () => {
+    const nextQuestion = number + 1;
+    if (nextQuestion === total_Questions) {
+      setGameOver(true);
+    } else {
+      setNumber(nextQuestion);
+    }
+  };
   return (
     <div className="App">
       <h1>I am react</h1>
@@ -60,7 +67,7 @@ function App() {
       )}
       {!gameOver && !loading && userAnswers.length === number + 1
         && number !== total_Questions - 1 ?
-        (<button className="next" onClick={nextQuestion}>
+        (<button className="next" onClick={next_Question}>
           Next
         </button>)
         : null}
