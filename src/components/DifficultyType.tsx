@@ -4,4 +4,4 @@ export enum Difficulty {
     MEDIUM = "medium",
     HARD = "hard",
 }
-export type QuestionState = Question & { answer: string[] }
+export type QuestionState = Question & { answers: string[] }

@@ -27,7 +27,9 @@ function App() {
   };
   const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
   }
-  const nextQuestion = () => {}
+  const nextQuestion = () => {};
+  console.log(questions[number]);
+    
   return (
     <div className="App">
       <h1>I am react</h1>
@@ -42,7 +44,7 @@ function App() {
       <QuestionCard 
       questionNr={number + 1} totalQuestions={total_Questions}
       question={questions[number].question}
-      answers={questions[number].answer}
+      answers={questions[number].answers}
       userAnswer={userAnswers ? userAnswers[number] : undefined}
       callback={checkAnwer}
       />
