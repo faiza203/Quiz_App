@@ -4,7 +4,7 @@ import { fetchQuizQuestions } from "./API";
 import './App.css';
 
 function App() {
-  const total_Questions = 10;
+  const total_Questions = 11;
   const [loading, setLoading] = useState(false);
   const [questions, setQuestion] = useState<QuestionState[]>([]);
   const [number, setNumber] = useState(0);
@@ -40,7 +40,9 @@ function App() {
   }
   const next_Question = () => {
     const nextQuestion = number + 1;
-    if (nextQuestion === total_Questions) {
+    console.log(nextQuestion , total_Questions);
+    if (nextQuestion +1   === total_Questions) {
+      console.log(nextQuestion  , total_Questions);
       setGameOver(true);
     } else {
       setNumber(nextQuestion);
@@ -54,11 +56,11 @@ function App() {
       </button>
       ) : null
       }
-      {!gameOver ? <p className="score">score</p> : null}
+      {!gameOver ? <p className="score">score : {score}</p> : null}
       {loading && <p>Loading Questions...</p>}
-      {!loading && !gameOver && (
+      {!gameOver && !loading && (
         <QuestionCard
-          questionNr={number + 1} totalQuestions={total_Questions}
+          questionNr={number + 1} totalQuestions={total_Questions - 1}
           question={questions[number].question}
           answers={questions[number].answers}
           userAnswer={userAnswers ? userAnswers[number] : undefined}
