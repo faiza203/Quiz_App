@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { QuestionState, Difficulty , AnswerObject , QuestionCard} from "./components/index";
+import { QuestionState, Difficulty, AnswerObject, QuestionCard } from "./components/index";
 import { fetchQuizQuestions } from "./API";
 import './App.css';
 
@@ -27,9 +27,9 @@ function App() {
   };
   const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
   }
-  const nextQuestion = () => {};
+  const nextQuestion = () => { };
   console.log(questions[number]);
-    
+
   return (
     <div className="App">
       <h1>I am react</h1>
@@ -40,19 +40,19 @@ function App() {
       }
       {!gameOver ? <p className="score">score</p> : null}
       {loading && <p>Loading Questions...</p>}
-    {!loading && !gameOver && (
-      <QuestionCard 
-      questionNr={number + 1} totalQuestions={total_Questions}
-      question={questions[number].question}
-      answers={questions[number].answers}
-      userAnswer={userAnswers ? userAnswers[number] : undefined}
-      callback={checkAnwer}
-      />
-    )}
-
-      <button className="next" onClick={nextQuestion}>
+      {!loading && !gameOver && (
+        <QuestionCard
+          questionNr={number + 1} totalQuestions={total_Questions}
+          question={questions[number].question}
+          answers={questions[number].answers}
+          userAnswer={userAnswers ? userAnswers[number] : undefined}
+          callback={checkAnwer}
+        />
+      )}
+      {!gameOver && !loading && userAnswers.length === number + 1 && number !== total_Questions - 1 ? <button className="next" onClick={nextQuestion}>
         Next
       </button>
+        : null}
     </div>
   );
 }
