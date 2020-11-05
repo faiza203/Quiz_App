@@ -25,9 +25,18 @@ function App() {
     setLoading(false);
   };
   const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
-  if(!gameOver){
-    const answer = e.currentTarget.value;
-  }
+    if (!gameOver) {
+      const answer = e.currentTarget.value;
+      const correct = questions[number].correct_answer === answer;
+      if (correct) setScore(prev => prev + 1);
+      const answerObj = {
+        question : questions[number].question,
+        answer,
+        correct,
+        correct_answer : questions[number].correct_answer,
+      }
+      setUserAnswers(prev => [...prev, answerObj])
+    }
   }
   const nextQuestion = () => { };
   return (
@@ -50,7 +59,7 @@ function App() {
         />
       )}
       {!gameOver && !loading && userAnswers.length === number + 1
-        && number !== total_Questions - 1 ? 
+        && number !== total_Questions - 1 ?
         (<button className="next" onClick={nextQuestion}>
           Next
         </button>)
