@@ -11,7 +11,6 @@ function App() {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-  console.log(fetchQuizQuestions(total_Questions, Difficulty.EASY));
   const startTrivia = async () => {
     setLoading(true);
     setGameOver(false);
@@ -26,10 +25,11 @@ function App() {
     setLoading(false);
   };
   const checkAnwer = (e: React.MouseEvent<HTMLButtonElement>) => {
+  if(!gameOver){
+    const answer = e.currentTarget.value;
+  }
   }
   const nextQuestion = () => { };
-  console.log(questions[number]);
-
   return (
     <div className="App">
       <h1>I am react</h1>
@@ -49,9 +49,11 @@ function App() {
           callback={checkAnwer}
         />
       )}
-      {!gameOver && !loading && userAnswers.length === number + 1 && number !== total_Questions - 1 ? <button className="next" onClick={nextQuestion}>
-        Next
-      </button>
+      {!gameOver && !loading && userAnswers.length === number + 1
+        && number !== total_Questions - 1 ? 
+        (<button className="next" onClick={nextQuestion}>
+          Next
+        </button>)
         : null}
     </div>
   );
