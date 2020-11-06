@@ -1,3 +1,7 @@
+* {
+    font-family: 'Catamaran', sans-serif;
+    box-sizing: border-box;
+  }
 h1{
     color: aquamarine;
     font-family: Fascinate Inline;
@@ -21,4 +25,8 @@ body {
     padding: 0 20px;
     display: flex;
     justify-content: center;
+}
+.start{
+    width: 20em;
+    max-width: 100%;
 }
