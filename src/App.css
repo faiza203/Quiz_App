@@ -36,16 +36,22 @@ body {
     width: 5rem;
 }
 #questionCard{
+    color: aqua;
     max-width: 1100px;
     border-radius: 10px;
     border: 2px solid #0085a3;
     padding: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     text-align: center;
+    font-size: 26px;
 }
 .score{
     color: #fff;
     font-family:garamond,serif;
     margin-left: 5em;
     font-size: 23px;
+}
+.option{
+    font-size: 26px;
+    color: aqua;
 }

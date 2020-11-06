@@ -17,7 +17,7 @@ export const QuestionCard: React.FC<Props> = (
                     <div
                         key={answer}
                     >
-                        <button className="btn btn-lg btn-block" disabled={userAnswer ? true : false} value={answer} onClick={callback}>
+                        <button className="btn btn-lg btn-block option" disabled={userAnswer ? true : false} value={answer} onClick={callback}>
                             <span dangerouslySetInnerHTML={{ __html: answer }} />
                         </button>
                     </div>
