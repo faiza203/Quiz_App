@@ -30,3 +30,8 @@ body {
     width: 20em;
     max-width: 100%;
 }
+.spinner-border{
+    margin-left: 10em;
+    height: 5rem;
+    width: 5rem;
+}
