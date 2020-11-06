@@ -7,7 +7,7 @@ export const QuestionCard: React.FC<Props> = (
         userAnswer, questionNr, totalQuestions }
 ) => {
     return (
-        <div>
+        <div id="questionCard">
             <p className="numbers">
                 Questions : {questionNr} / {totalQuestions}
             </p>
@@ -17,7 +17,7 @@ export const QuestionCard: React.FC<Props> = (
                     <div
                         key={answer}
                     >
-                        <button disabled={userAnswer ? true : false} value={answer} onClick={callback}>
+                        <button className="btn btn-lg btn-block" disabled={userAnswer ? true : false} value={answer} onClick={callback}>
                             <span dangerouslySetInnerHTML={{ __html: answer }} />
                         </button>
                     </div>

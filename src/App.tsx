@@ -59,7 +59,7 @@ function App() {
       }
       {!gameOver ? <p className="score">score : {score}</p> : null}
       {loading && < LoadingDiv /> }
-      {/* {!gameOver && !loading && (
+      {!gameOver && !loading && (
         <QuestionCard
           questionNr={number + 1} totalQuestions={total_Questions - 1}
           question={questions[number].question}
@@ -70,10 +70,10 @@ function App() {
       )}
       {!gameOver && !loading && userAnswers.length === number + 1
         && number !== total_Questions - 1 ?
-        (<button className="next btn btn-success" onClick={next_Question}>
+        (<button className="next btn btn-success btn-lg btn-block" onClick={next_Question}>
           Next
         </button>)
-        : null} */}
+        : null}
     </div>
   );
 }
