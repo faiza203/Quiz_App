@@ -51,7 +51,8 @@ function App() {
   return (
     <div className="App">
       <h1>React Quiz</h1>
-      {gameOver || userAnswers.length === total_Questions ? (<button className="start" onClick={startTrivia}>
+      {gameOver || userAnswers.length === total_Questions ? (
+      <button className="start btn btn-primary" onClick={startTrivia}>
         Start
       </button>
       ) : null
@@ -69,7 +70,7 @@ function App() {
       )}
       {!gameOver && !loading && userAnswers.length === number + 1
         && number !== total_Questions - 1 ?
-        (<button className="next" onClick={next_Question}>
+        (<button className="next btn btn-success" onClick={next_Question}>
           Next
         </button>)
         : null}
