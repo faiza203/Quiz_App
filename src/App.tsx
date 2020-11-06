@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { QuestionState, Difficulty, AnswerObject, QuestionCard } from "./components/index";
+import { QuestionState, Difficulty, AnswerObject, QuestionCard, LoadingDiv } from "./components/index";
 import { fetchQuizQuestions } from "./API";
 import './App.css';
 
@@ -40,9 +40,9 @@ function App() {
   }
   const next_Question = () => {
     const nextQuestion = number + 1;
-    console.log(nextQuestion , total_Questions);
-    if (nextQuestion +1   === total_Questions) {
-      console.log(nextQuestion  , total_Questions);
+    console.log(nextQuestion, total_Questions);
+    if (nextQuestion + 1 === total_Questions) {
+      console.log(nextQuestion, total_Questions);
       setGameOver(true);
     } else {
       setNumber(nextQuestion);
@@ -52,13 +52,13 @@ function App() {
     <div className="App">
       <h1>React Quiz</h1>
       {gameOver || userAnswers.length === total_Questions ? (
-      <button className="start btn btn-primary" onClick={startTrivia}>
-        Start
-      </button>
+        <button className="start btn btn-primary" onClick={startTrivia}>
+          Start
+        </button>
       ) : null
       }
       {!gameOver ? <p className="score">score : {score}</p> : null}
-      {loading && <p>Loading Questions...</p>}
+      {loading && < LoadingDiv />}
       {!gameOver && !loading && (
         <QuestionCard
           questionNr={number + 1} totalQuestions={total_Questions - 1}

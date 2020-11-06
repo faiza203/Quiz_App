@@ -4,3 +4,4 @@ export { Difficulty } from "./DifficultyType";
 export { QuestionCard } from "./QuestionCard";
 export type { QuestionState } from "./DifficultyType";
 export type { Props } from "./PropsType";
+export {LoadingDiv} from "./loading";
