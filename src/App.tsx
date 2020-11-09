@@ -44,6 +44,7 @@ function App() {
     if (nextQuestion + 1 === total_Questions) {
       console.log(nextQuestion, total_Questions);
       setGameOver(true);
+      alert(`Your scores are ${score} out of ${total_Questions - 1}`)
     } else {
       setNumber(nextQuestion);
     }
@@ -57,7 +58,6 @@ function App() {
         </button>
       ) : null
       }
-      {!gameOver ? <p className="score">score : {score}</p> : null}
       {loading && < LoadingDiv /> }
       {!gameOver && !loading && (
         <QuestionCard
@@ -73,7 +73,7 @@ function App() {
         (<button className="next btn btn-success btn-lg btn-block" onClick={next_Question}>
           Next
         </button>)
-        : null}
+        : null}  
     </div>
   );
 }
