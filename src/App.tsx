@@ -16,7 +16,7 @@ function App() {
     setGameOver(false);
     const newQuestions = await fetchQuizQuestions(
       total_Questions,
-      Difficulty.EASY
+      Difficulty.HARD
     );
     setQuestion(newQuestions);
     setScore(0);
@@ -40,9 +40,7 @@ function App() {
   }
   const next_Question = () => {
     const nextQuestion = number + 1;
-    console.log(nextQuestion, total_Questions);
     if (nextQuestion + 1 === total_Questions) {
-      console.log(nextQuestion, total_Questions);
       setGameOver(true);
       alert(`Your scores are ${score} out of ${total_Questions - 1}`)
     } else {
